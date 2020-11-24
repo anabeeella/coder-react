@@ -1,19 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import Products from '../Content/products.json';
 import Item from '../Components/Item';
-import ItemCountContainer from './ItemCountContainer';
 
 
-const ItemListContainer = ({min, max}) => {
+const ItemListContainer = () => {
 
     const [products, setProducts] = useState([]);
 
     useEffect(()=> {
-    let getProducts = new Promise((res, rej)=> {
+    let getProducts = new Promise((res)=> {
   
         setTimeout(()=>{
           res(Products)
-          }, 3000);
+          }, 1000);
       
       });
       
@@ -30,10 +29,7 @@ const ItemListContainer = ({min, max}) => {
         <div>
                 {products.length && products.map(product => (
                     <div  className='card column is-2'>
-                    <Item name={product.name} key={product.id} price={product.price} knitType={product.knitType} />
-                        <div className='contador'>
-                            <ItemCountContainer/>
-                        </div>
+                    <Item name={product.name} id={product.id} key={product.id} price={product.price} knitType={product.knitType} />
                     </div>
                 ))
                 
