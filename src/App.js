@@ -1,10 +1,9 @@
-import React from 'react';
+import React  from 'react';
 import NavBar from './Components/NavBar';
 import logo from './logo2.svg';
 
 import { Link } from 'react-router-dom';
-import {BrowserRouter} from 'react-router-dom';
-
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (

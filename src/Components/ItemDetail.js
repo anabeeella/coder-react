@@ -6,6 +6,7 @@ import ItemCountContainer from '../Containers/ItemCountContainer';
 const ItemDetail = ({name, id, key, price, knitType}) => {
 
 
+
 return (
         <div key={key} id={id}>
                 <img></img>
@@ -14,10 +15,8 @@ return (
                 <p>{knitType}</p>
                 <ItemCountContainer min='0' max='10'/>
                 <button className='button is-primary'>Agregar al carrito</button>
-              </div>
+        </div>
       )
 }
     
 export default ItemDetail;
-
-

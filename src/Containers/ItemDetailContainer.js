@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Products from '../Content/products.json';
 import ItemDetail from '../Components/ItemDetail';
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
 
@@ -24,18 +25,17 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {console.log(products)}, [products]);
 
-    
+    const {id} = useParams();
+
+    const product = products.filter(item => item.id === id)
+
     return (
 
         <div>
-        {products.length && products.map(product => (
-            <div  className='card'>
-            <ItemDetail name={product.name} id={product.id} key={product.id} price={product.price} knitType={product.knitType} />
+            <div className='card'>
+            <ItemDetail product={product} />
             </div>
-        ))
-        
-        }
-</div>
+        </div>
     )
 }
 
