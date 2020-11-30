@@ -23,13 +23,13 @@ const ItemListContainer = () => {
       
     }, []);
 
-    useEffect(() => {console.log(products)}, [products]);
+    useEffect(() => {}, [products]);
 
       return  (
-        <div>
+        <div>A
                 {products.length && products.map(product => (
-                    <div  className='card column is-2'>
-                    <Item name={product.name} id={product.id} key={product.id} price={product.price} knitType={product.knitType} />
+                    <div key={product.id} className='card column is-2'>
+                    <Item name={product.name} id={product.id} price={product.price} knitType={product.knitType} />
                     </div>
                 ))
                 

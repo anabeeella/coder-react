@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Item = ({name, id, key, price, knitType}) => {
+const Item = ({name, id, price, knitType}) => {
 
 
 return (
-          <div key={key}>
+          <div key={id}>
             <img></img>
             <h3 className='subtitle'>{name}</h3>
             <h4>${price}</h4>
