@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
     let getProducts = new Promise((res)=> {
   
         setTimeout(()=>{
-          res(Products)
+          res(products)
           });
       
       });
@@ -23,19 +23,20 @@ const ItemDetailContainer = () => {
       
     }, []);
 
-    useEffect(() => {console.log(products)}, [products]);
 
+
+    
     const { id } = useParams();
-    console.log(id);
+    
 
-
-    const product = products?.filter(item => item.id === id)
+    const itemSelected = Products.filter(item => item.id === Number(id))
+    console.log(itemSelected);
 
     return (
 
         <div>
             <div className='card'>
-            <ItemDetail product={product} id={id} />
+            <ItemDetail item={itemSelected} />
             </div>
         </div>
     )

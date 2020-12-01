@@ -26,7 +26,7 @@ const ItemListContainer = () => {
     useEffect(() => {}, [products]);
 
       return  (
-        <div>A
+        <div>
                 {products.length && products.map(product => (
                     <div key={product.id} className='card column is-2'>
                     <Item name={product.name} id={product.id} price={product.price} knitType={product.knitType} />
