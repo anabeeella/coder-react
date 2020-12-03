@@ -8,6 +8,7 @@ import {Switch, Route} from 'react-router-dom';
 import Home from '../Components/Home';
 import ItemListContainer from '../Containers/ItemListContainer';
 import ItemDetailContainer from '../Containers/ItemDetailContainer'
+import CartContainer from '../Containers/CartContainer';
 //Es un componente FUNCIONAL que retorna JSX
 //En HOME.JS para retornar JSX hay que usar un render()
 
@@ -20,7 +21,8 @@ const NavBar = () => {
                 <a className="navbar-item"><Link to={'/gallery'}>Gallery</Link></a>
                 <a className="navbar-item"><Link to={'/about-me'}>About me</Link></a>
                 <a className="navbar-item"><Link to={'/contact'}>Contact</Link></a>
-                <a className="navbar-item"><Link to={'/shop'}><CartIcon/>Shop</Link></a>
+                <a className="navbar-item"><Link to={'/shop'}>Shop</Link></a>
+                <a className="navbar-item"><Link to={'/cart'}><CartIcon/></Link></a>
         </nav>
         <Switch>
           <Route exact path='/'>        
@@ -35,6 +37,7 @@ const NavBar = () => {
           <Route path='/about-me'></Route>
           <Route path='/contact'></Route>
           <Route path='/shop'><ItemListContainer/></Route>
+          <Route path='/cart'><CartContainer/></Route>
           <Route exact path="/:id" component={ItemDetailContainer}/>
         </Switch>
     </div>  

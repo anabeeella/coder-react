@@ -4,9 +4,12 @@ import logo from './logo2.svg';
 
 import { Link } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
+import CartContextProvider from './Context/CartContextProvider'
+
 
 function App() {
   return (
+    <CartContextProvider>
     <div className="container">
       <BrowserRouter>
           <Link to={'/'}>
@@ -17,6 +20,7 @@ function App() {
           <NavBar />
       </BrowserRouter>
     </div>
+    </CartContextProvider>
   );
 }
 
